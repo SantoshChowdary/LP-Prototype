@@ -2,15 +2,18 @@ import { Component } from "react";
 import { Link } from "react-router-dom";
 import { MovieCardImg } from "../styledComponents";
 
-class MovieCard extends Component {
+class MovieCard extends Component<any> {
     
 
 
     render() {
+
+        const {movieData} = this.props;
+
         return (
-            <Link to="/">
-                <MovieCardImg src="https://assets.ccbp.in/frontend/react-js/movies-app/grindhouse-movie-background-v0.png" alt="movie-card" />
-            </Link>
+            <Link to={`/movies/${movieData.id}`}>
+                <MovieCardImg src={movieData.backdropPath} alt="movie-card" />
+            </Link> 
         )
     }
 }

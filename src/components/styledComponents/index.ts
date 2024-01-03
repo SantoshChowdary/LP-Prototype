@@ -1,17 +1,23 @@
 import { styled } from "styled-components";
 
 export const HeaderDiv = styled.div`
-    background : transparent;
-    // background-color:  rgb(140 140 140 / 20%);
-    position : absolute;
+    // background : transparent;
+    background-color:  rgb(140 140 140 / 10%);
+    background-color: rgba(0, 0, 0, 0.8);
+    position : relative;
     top : 0;
+    z-index : 10;
     width : 100%;
     height : 60px;
     display : flex;
     justify-content : space-between;
     align-items : center;
     padding : 0 10%;
-    // border-bottom : 2px solid lightgrey;
+
+    a {
+        color : white;
+        margin : 0 10px;
+    }
 `
 
 export const HeaderSubDiv = styled.div`
@@ -55,6 +61,7 @@ export const InputDiv = styled.div`
         border : none;
         background : transparent;
         width : 100%;
+        color : white;
         &:focus{
             outline : none;
         }
@@ -96,14 +103,19 @@ export const LoaderSubDiv = styled.div`
 ` 
 
 export const MovieCardImg = styled.img`
-    width : 300px;
-    height : 170px;
+    width : 250px;
+    height : 140px;
     margin : 10px;
     cursor : pointer;
     border-radius : 8px;
 
+    @media screen and (max-width : 650px){
+        width : 150px;
+        height : 100px;
+    }
+
     @media screen and (max-width : 450px){
         width : 100px;
-        height : 200px;
+        height : 80px;
     }
 `

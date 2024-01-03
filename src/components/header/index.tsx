@@ -5,13 +5,11 @@ import { CiSearch } from "react-icons/ci";
 import { AiOutlineMenu } from "react-icons/ai";
 
 class Header extends Component {
-
     state = {
         hamburgerMenu : false
     }
 
     changeMenuDisplayStatus = () => {
-        console.log(this.state.hamburgerMenu)
         this.setState({
             hamburgerMenu : !this.state.hamburgerMenu
         })

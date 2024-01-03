@@ -13,5 +13,9 @@ export interface MovieData {
         title: string
         overview: string
     }
-    
+}
+
+export interface PopularMoviesData {
+    popularMoviesList : any[],
+    shouldShowLoader : boolean
 }

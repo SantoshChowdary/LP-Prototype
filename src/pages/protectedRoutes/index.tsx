@@ -6,7 +6,6 @@ import { StoreContext } from '../../context/storeContext';
 const ProtectedRoute = observer((props : any) => {
 
     const store: any = useContext(StoreContext);
-    console.log(store)
     const {authStore} = store;
 
     if (!authStore.isAuthenticated) {

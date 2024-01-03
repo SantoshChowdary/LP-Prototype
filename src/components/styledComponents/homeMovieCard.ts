@@ -2,7 +2,7 @@ import {styled} from 'styled-components';
 
 export const MainDiv = styled.div<{imgSrc? : string, mobileBgUrl? : string}>`
     height : 70vh;
-    width : 100vw;
+    width : 100%;
     background-image : url(${(props : any) => props.imgSrc});
     background-repeat : no-repeat;
     background-size : cover;
@@ -10,7 +10,7 @@ export const MainDiv = styled.div<{imgSrc? : string, mobileBgUrl? : string}>`
     background-attachment: fixed;
     display : flex;
     flex-direction : column;
-    justify-content : flex-end;
+    justify-content : space-between;
 
     @media screen and (max-width : 576px){
         background-image : url(${(props : any) => props.mobileBgUrl});
@@ -19,12 +19,14 @@ export const MainDiv = styled.div<{imgSrc? : string, mobileBgUrl? : string}>`
 `
 
 export const SubDiv = styled.div`
-    background-image : linear-gradient(180deg, transparent, rgba(24,24,24,.546875) 38.26%,#131313 92.82%,#131313 98.68%,#131313 108.61%);
+    background-image : linear-gradient(180deg, transparent, rgba(24,24,24,.546875) 38.26%,#000000 92.82%,#000000 98.68%,#000000 108.61%);
     padding : 50px 100px;
+    width: 100%;
     color : white;
 
     h1 {
-        font-size : 45px;
+        font-size : 40px;
+        opacity : 0.7;
     }
 
     p{

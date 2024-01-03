@@ -1,10 +1,10 @@
 import { Component } from "react";
 import { StoreContext } from "../../context/storeContext";
-import Header from "../../components/header";
 import Loader from "../../components/loader";
 import { HomeState } from "../../types/home";
-import MovieCard from "../../components/MovieCard";
 import MainMovieCard from "../../components/mainMovieCard";
+import TrendingMovies from "../../components/trendingMoviesComponent";
+import OriginalsMoviesComponent from "../../components/originalMoviesComponent";
 
 
 
@@ -33,7 +33,6 @@ class Home extends Component <{}, HomeState> {
             shouldShowLoader : false,
             randomMovieData : randomMovieData
         });
-        console.log(this.state)
     }
 
     componentDidMount(): void {
@@ -49,9 +48,15 @@ class Home extends Component <{}, HomeState> {
         }
 
         return(
-            <div>
-                <Header/>
+            <div style={{backgroundColor: "black", minHeight: "100vh",maxWidth: "100vw", overflow: "none"}}>
                 <MainMovieCard movieData={this.state.randomMovieData} />
+                <div style={{padding : "60px 0"}}>
+                    <TrendingMovies list={trendingMoviesList} />
+                    <br />
+                    <br />
+                    <br />
+                    <OriginalsMoviesComponent list={originalsMoviesList} />
+                </div>
             </div>
         )
     }

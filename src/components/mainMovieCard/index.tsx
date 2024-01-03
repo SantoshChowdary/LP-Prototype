@@ -1,7 +1,8 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
 import { MovieData } from "../../types/home";
-import { MainDiv, SubDiv } from "../styledComponents/MainMovieCard";
+import { MainDiv, SubDiv } from "../styledComponents/homeMovieCard";
+import Header from "../header";
 
 
 class MainMovieCard extends Component<MovieData> {
@@ -13,6 +14,7 @@ class MainMovieCard extends Component<MovieData> {
 
         return (
             <MainDiv imgSrc={backdropPath} mobileBgUrl={posterPath}>
+                <Header />
                 <SubDiv>
                     <h1>{title}</h1>
                     <p>{overview}</p>
