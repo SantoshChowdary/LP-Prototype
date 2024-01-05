@@ -119,3 +119,36 @@ export const MovieCardImg = styled.img`
         height : 80px;
     }
 `
+
+export const MovieCardDiv = styled.div`
+    background-color : black;
+    color : white;
+    display : flex;
+    justify-content : space-evenly;
+    align-items : center;
+    flex-wrap : wrap;
+    width : 100%;
+    min-height : 60vh;
+`
+
+export const ListHeading = styled.p`
+    color : #94A3B8;
+    margin: 20px 0;
+    font-size : 20px;
+`
+
+export const ListDiv = styled.div`
+    display : flex;
+    justify-content : space-evenly;
+    // align-items : center;
+    flex-wrap : wrap;
+    width : 100%;
+
+    ul {
+        list-style : none;
+        padding : 0;
+    }
+    li {
+        margin : 10px 0;
+    }
+`

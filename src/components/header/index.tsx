@@ -4,15 +4,26 @@ import { HeaderDiv, HeaderSubDiv, ProfileIcon, InputDiv, HamburgerDiv } from "..
 import { CiSearch } from "react-icons/ci";
 import { AiOutlineMenu } from "react-icons/ai";
 
-class Header extends Component {
+class Header extends Component<any> {
     state = {
-        hamburgerMenu : false
+        hamburgerMenu : false,
+        searchValue : ""
     }
 
     changeMenuDisplayStatus = () => {
         this.setState({
-            hamburgerMenu : !this.state.hamburgerMenu
+            hamburgerMenu : !this.state.hamburgerMenu,
+            searchValue : this.state.searchValue
         })
+    }
+
+    setAndSearchValue = (e : React.SyntheticEvent) => {
+        this.setState({
+            searchValue : (e.target as HTMLInputElement).value,
+            hamburgerMenu : this.state.hamburgerMenu
+        })
+        this.props.setSearchValue(this.state.searchValue)
+
     }
 
     render(){
@@ -33,13 +44,21 @@ class Header extends Component {
                     <p><strong><Link to="/popular">Popular</Link></strong></p>
                 </HeaderSubDiv>
                 <HeaderSubDiv>
-                    <InputDiv>
-                        <input placeholder="Search" type="search" />
-                        <CiSearch />
-                    </InputDiv>
+                    <Link to="/search">
+                        <InputDiv>
+                            <input 
+                                placeholder="Search" 
+                                type="search" 
+                                autoFocus={this.props.search ? true : false}
+                                value = {this.state.searchValue}
+                                onChange = {this.setAndSearchValue}
+                            />
+                            <CiSearch />
+                        </InputDiv>
+                    </Link>
                     <HamburgerDiv>
-                        <AiOutlineMenu onClick={this.changeMenuDisplayStatus} />
-                        <div style={{display : hamburgerMenu ? "none" : "block", position: "absolute", top: "60px", right: "30px"}}>
+                        <AiOutlineMenu onClick={this.changeMenuDisplayStatus} color="white" />
+                        <div style={{display : hamburgerMenu ? "block" : "none", position: "absolute", top: "60px", right: "30px", backgroundColor: "black", color: "white"}}>
                             <strong><Link to="/">Home </Link></strong>
                             <strong><Link to="/popular">Popular</Link></strong>
                         </div>

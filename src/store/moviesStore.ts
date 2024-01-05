@@ -101,7 +101,7 @@ export class MoviesStore {
                         }
                     ))
             }
-            // console.log(movieData)
+            console.log(movieData)
             return movieData;
         } else {
             throw new Error(data.error_msg);;
